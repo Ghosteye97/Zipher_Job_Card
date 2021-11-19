@@ -1,0 +1,468 @@
+{% extends "main/base.html"%}
+
+{% block content %}
+<div style="padding-left: 50px">
+    <form method="POST">
+        {% csrf_token %}
+        <div class="group1" style="text-align: center; width: 64%">
+            <h1> Customer Details </h1>
+            <br>
+            <div class="Customer">
+                <div class="row mb-3">
+                    <div class="col">
+                        Customer Name
+                    </div>
+                    <div class="col">
+                        {{ form.customerName }}
+                    </div>
+                </div>
+                <br>
+                <div class="row mb-3">
+                    <div class="col">
+                        Street Number
+                    </div>
+                    <div class="col">
+                        {{ form.addressStreetNo }}
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col">
+                        Street Name
+                    </div>
+                    <div class="col">
+                        {{ form.addressStreet }}
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col">
+                        Suburb
+                    </div>
+                    <div class="col">
+                        {{ form.addressSuburb }}
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col">
+                        City
+                    </div>
+                    <div class="col">
+                        {{ form.addressCity }}
+                    </div>
+                </div>
+                <br>
+                <div class="row mb-3">
+                    <div class="col">
+                        Contact
+                    </div>
+                    <div class="col">
+                        {{ form.contact }}
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col">
+                        E-mail
+                    </div>
+                    <div class="col">
+                        {{ form.mail }}
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col">
+                        Cell Number
+                    </div>
+                    <div class="col">
+                        {{ form.CellNo }}
+                    </div>
+                </div>
+            </div>
+        </div>a
+
+        <br>
+
+        <div class="group2" style="text-align: center; width: 64%">
+            <h1> Job Details </h1>
+            <br>
+            <div class="Customer">
+                <div class="row mb-3">
+                    <div class="col">
+                        Job Number
+                    </div>
+                    <div class="col">
+                        ZTS-{{ n }}
+                    </div>
+                </div>
+                <br>
+                <div class="row mb-3">
+                    <div class="col">
+                        Date Recieved
+                    </div>
+                    <div class="col">
+                        {{ form.dateRecieved }}
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col">
+                        Date To Be Completed
+                    </div>
+                    <div class="col">
+                        {{ form.dateToBeCompleted }}
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col">
+                        Instruction Taken By
+                    </div>
+                    <div class="col">
+                        {{ form.instructionBy }}
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col">
+                        Job Done By
+                    </div>
+                    <div class="col">
+                        {{ form.jobDoneBy }}
+                    </div>
+                </div>
+                <br>
+                <div class="row mb-3">
+                    <div class="col">
+                        Time Started
+                    </div>
+                    <div class="col">
+                        {{ form.timeStarted }}
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col">
+                        Time Completed
+                    </div>
+                    <div class="col">
+                        {{ form.timeCompleted }}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="group2" style="text-align: center; width: 64%">
+            <h1 class="h1">Instructions</h1>
+            <br>
+            {{ form.Instructions }}
+        </div>
+
+        <br>
+
+        <div class="group2" style="text-align: center; width: 64%;">
+            <h1 >Materials</h1>
+            <div class="row mb-1">
+                <div class="col">
+                    Description
+                </div>
+                <div class="col">
+                    Quantity
+                </div>
+                <div class="col">
+                    Price
+                </div>
+                <div class="col">
+                    Total
+                </div>
+            </div>
+            <div class="row mb-1">
+                <div class="col">
+                    {{ form.matDescription1 }}
+                </div>
+                <div class="col">
+                    {{ form.matQuantity1 }}
+                </div>
+                <div class="col">
+                    R{{ form.matUnitPrice1 }}
+                </div>
+                <div class="col">
+                    R{{ form.matTotal1 }}
+                </div>
+            </div>
+            <div class="row mb-1">
+                <div class="col">
+                    {{ form.matDescription2 }}
+                </div>
+                <div class="col">
+                    {{ form.matQuantity2 }}
+                </div>
+                <div class="col">
+                    R{{ form.matUnitPrice2 }}
+                </div>
+                <div class="col">
+                    R{{ form.matTotal2 }}
+                </div>
+            </div>
+            <div class="row mb-1">
+                <div class="col">
+                    {{ form.matDescription3 }}
+                </div>
+                <div class="col">
+                    {{ form.matQuantity3 }}
+                </div>
+                <div class="col">
+                    R{{ form.matUnitPrice3 }}
+                </div>
+                <div class="col">
+                    R{{ form.matTotal3 }}
+                </div>
+            </div>
+            <div class="row mb-1">
+                <div class="col">
+                    {{ form.matDescription4 }}
+                </div>
+                <div class="col">
+                    {{ form.matQuantity4 }}
+                </div>
+                <div class="col">
+                    R{{ form.matUnitPrice4 }}
+                </div>
+                <div class="col">
+                    R{{ form.matTotal4 }}
+                </div>
+            </div>
+            <div class="row mb-1">
+                <div class="col">
+                    {{ form.matDescription5 }}
+                </div>
+                <div class="col">
+                    {{ form.matQuantity5 }}
+                </div>
+                <div class="col">
+                    R{{ form.matUnitPrice5 }}
+                </div>
+                <div class="col">
+                    R{{ form.matTotal5 }}
+                </div>
+            </div>
+            <div class="row mb-1">
+                <div class="col">
+                    {{ form.matDescription6 }}
+                </div>
+                <div class="col">
+                    {{ form.matQuantity6 }}
+                </div>
+                <div class="col">
+                    R{{ form.matUnitPrice6 }}
+                </div>
+                <div class="col">
+                    R{{ form.matTotal6 }}
+                </div>
+            </div>
+            <div class="row mb-1">
+                <div class="col">
+
+                </div>
+                <div class="col">
+
+                </div>
+                <div class="col">
+
+                </div>
+                <div class="col">
+                    <p>Total</p>
+                    R{{ form.matTotalExVat }}
+                </div>
+            </div>
+            <div class="row mb-1">
+                <div class="col">
+
+                </div>
+                <div class="col">
+
+                </div>
+                <div class="col">
+
+                </div>
+                <div class="col">
+                    <p>VAT (15%)</p>
+                    R{{ form.matVat }}
+                </div>
+            </div>
+            <div class="row mb-1">
+                <div class="col">
+
+                </div>
+                <div class="col">
+
+                </div>
+                <div class="col">
+
+                </div>
+                <div class="col">
+                    <p style="line-height: 1">Total Due </p>
+                    R{{ form.matTotalDue }}
+                </div>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="group2" style="text-align: center; width: 64%;">
+        <h1 >Labour</h1>
+            <div class="row mb-1">
+                <div class="col">
+                    Description
+                </div>
+                <div class="col">
+                    Quantity
+                </div>
+                <div class="col">
+                    Price
+                </div>
+                <div class="col">
+                    Total
+                </div>
+            </div>
+            <div class="row mb-1">
+                <div class="col">
+                    {{ form.labDescription1 }}
+                </div>
+                <div class="col">
+                    {{ form.labQuantity1 }}
+                </div>
+                <div class="col">
+                    R{{ form.labUnitPrice1 }}
+                </div>
+                <div class="col">
+                    R{{ form.labTotal1 }}
+                </div>
+            </div>
+            <div class="row mb-1">
+                <div class="col">
+                    {{ form.labDescription2 }}
+                </div>
+                <div class="col">
+                    {{ form.labQuantity2 }}
+                </div>
+                <div class="col">
+                    R{{ form.labUnitPrice2 }}
+                </div>
+                <div class="col">
+                    R{{ form.labTotal2 }}
+                </div>
+            </div>
+            <div class="row mb-1">
+                <div class="col">
+                    {{ form.labDescription3 }}
+                </div>
+                <div class="col">
+                    {{ form.labQuantity3 }}
+                </div>
+                <div class="col">
+                    R{{ form.labUnitPrice3 }}
+                </div>
+                <div class="col">
+                    R{{ form.labTotal3 }}
+                </div>
+            </div>
+            <div class="row mb-1">
+                <div class="col">
+                    {{ form.labDescription4 }}
+                </div>
+                <div class="col">
+                    {{ form.labQuantity4 }}
+                </div>
+                <div class="col">
+                    R{{ form.labUnitPrice4 }}
+                </div>
+                <div class="col">
+                    R{{ form.labTotal4 }}
+                </div>
+            </div>
+            <div class="row mb-1">
+                <div class="col">
+                    {{ form.labDescription5 }}
+                </div>
+                <div class="col">
+                    {{ form.labQuantity5 }}
+                </div>
+                <div class="col">
+                    R{{ form.labUnitPrice5 }}
+                </div>
+                <div class="col">
+                    R{{ form.labTotal5 }}
+                </div>
+            </div>
+            <div class="row mb-1">
+                <div class="col">
+                    {{ form.labDescription6 }}
+                </div>
+                <div class="col">
+                    {{ form.labQuantity6 }}
+                </div>
+                <div class="col">
+                    R{{ form.labUnitPrice6 }}
+                </div>
+                <div class="col">
+                    R{{ form.labTotal6 }}
+                </div>
+            </div>
+            <div class="row mb-1">
+                <div class="col">
+
+                </div>
+                <div class="col">
+
+                </div>
+                <div class="col">
+
+                </div>
+                <div class="col">
+                    <p>Total</p>
+                    R{{ form.labTotalExVat }}
+                </div>
+            </div>
+            <div class="row mb-1">
+                <div class="col">
+
+                </div>
+                <div class="col">
+
+                </div>
+                <div class="col">
+
+                </div>
+                <div class="col">
+                    <p>VAT (15%)</p>
+                    R{{ form.labVat }}
+                </div>
+            </div>
+            <div class="row mb-1">
+                <div class="col">
+
+                </div>
+                <div class="col">
+
+                </div>
+                <div class="col">
+
+                </div>
+                <div class="col">
+                    <p>Total Due</p>
+                    R{{ form.labTotalDue }}
+                </div>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="group2" style="text-align: center; width: 64%;">
+            <h3>Total Cost Of Job</h3>
+            R{{ form.totalCostOfJob }}
+        </div>
+
+        <br>
+
+        <div class="group2" style="text-align: center; width: 64%;">
+            <input type="submit" class="btn btn-success">
+        </div>
+    </form>
+</div>
+
+{% endblock %}

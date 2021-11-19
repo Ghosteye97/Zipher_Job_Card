@@ -1,0 +1,32 @@
+{% extends "main/base.html"%}
+
+
+{% block content %}
+<div style="text-align: center">
+    <div class="row mb-3">
+        <div style="padding-left: 50px; width: 40%">
+            <div class="col" >
+                <div class="row mb-2" style="text-align: center">
+                    <div class="col">
+                        <a class="btn btn-danger" href="{% url 'jobCard' %}">New Job Card</a>
+                    </div>
+                </div>
+                <ul class="list-group">
+                    <a class="list-group-item list-group-item-danger">Recently Added Job Cards</a>
+                    {% for x in cards %}
+                          <li class="list-group-item" style="color: black" >{{ x.customerName }} <span class="badge" style="color: black">{{ x.jobNumber }}</span> <a href="{% url 'viewJobCard' x.id %}" class="btn btn-light" >Preview</a><a href="{% url 'printJobCard' x.id %}" class="btn btn-dark" >Print</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <div style="padding-left: 50px; width: 40%">
+            <div class="col" >
+                <div class="alert alert-primary" role="alert">
+                  <p><b>Total Job Cards Done</b></p>
+                    <p>{{ counter }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

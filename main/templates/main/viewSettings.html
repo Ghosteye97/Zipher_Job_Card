@@ -1,0 +1,230 @@
+{% extends "main/base.html"%}
+
+
+{% block content %}
+<div class="container" style="text-align:center">
+            <a class="btn btn-danger" href="{% url 'deleteJobCard' card.id %}">Delete Job Card</a>
+
+            <a class="btn btn-dark" href="{% url 'printJobCard' card.id %}">Print Job Card</a>
+    <br>
+    <hr>
+    <br>
+    <div class="row mb-1">
+        <div class="col">
+            <p>Zipher Total Security </p>
+
+            <p style="line-heght: .5">121 Soutpansberg Drive,<br>
+            Van Riebeeck Park , Kempton Park</p>
+
+            <p>011 040 2000</p>
+
+            <p>zipher@zipher.co.za</p>
+        </div>
+        <div class="col">
+            <img style="width: 45%;" src="https://i.imgur.com/OKQZDFY.png">
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="row mb-1">
+        <div class="col">
+            <p><b>Customer:</b> {{ card.customerName }}</p>
+        </div>
+        <div class="col">
+            <p><b>Job Number:</b> {{ card.jobNumber }}</p>
+        </div>
+    </div>
+    <div class="row mb-1">
+        <div class="col">
+            <p><b>Address:</b> {{ card.addressStreetNo }}, {{ card.addressStreet }}</p>
+        </div>
+        <div class="col">
+            <p></p>
+        </div>
+    </div>
+    <div class="row mb-1">
+        <div class="col">
+            <p><b>Suburb: </b> {{ card.addressSuburb }}</p>
+        </div>
+        <div class="col">
+            <p><b>Date Recieved: </b> {{ card.dateRecieved }}</p>
+        </div>
+    </div>
+    <div class="row mb-1">
+        <div class="col">
+            <p><b>City: </b> {{ card.addressCity }}</p>
+        </div>
+        <div class="col">
+                <p><b>Date To Be Completed: </b> {{ card.dateToBeCompleted }}</p>
+        </div>
+    </div>
+    <div class="row mb-1">
+        <div class="col">
+            <p></p>
+        </div>
+        <div class="col">
+                <p><b>Intruction Taken By: </b> {{ card.instructionBy }}</p>
+        </div>
+    </div>
+    <div class="row mb-1">
+        <div class="col">
+            <p><b>Contact: </b> {{ card.contact }}</p>
+        </div>
+        <div class="col">
+                <p><b>Job Done By: </b> {{ card.jobDoneBy }}</p>
+        </div>
+    </div>
+    <div class="row mb-1">
+        <div class="col">
+            <p><b>E-mail: </b> {{ card.mail }}</p>
+        </div>
+        <div class="col">
+                <p><b>Time Started: </b> {{ card.timeStarted }}</p>
+        </div>
+    </div>
+    <div class="row mb-1">
+        <div class="col">
+            <p><b>Cell Number: </b> {{ card.CellNo }}</p>
+        </div>
+        <div class="col">
+                <p><b>Time Completed: </b> {{ card.timeCompleted }}</p>
+        </div>
+    </div>
+    <br>
+    <div class="row mb-1">
+        <h2>Instructions</h2>
+        <br>
+        <p>{{ card.Instructions }}</p>
+    </div>
+    <div class="row mb-1">
+        <table  ">
+            <tr>
+                <th colspan="4" style="text-align: center; border: 1px solid black;"><b>Material</b></th>
+                <th colspan="4" style="text-align: center; border: 1px solid black;"><b>Labour</b></th>
+            </tr>
+            <tr>
+                <th style="border: 1px solid black;">Description</th>
+                <th style="border: 1px solid black;">Quantity</th>
+                <th style="border: 1px solid black;">Unit Price</th>
+                <th style="border: 1px solid black;">Total</th>
+
+                <th style="border: 1px solid black;">Description</th>
+                <th style="border: 1px solid black;">Quantity</th>
+                <th style="border: 1px solid black;">Unit Price</th>
+                <th style="border: 1px solid black;">Total</th>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;">{{ card.matDescription1 }}</td>
+                <td style="border: 1px solid black;">{{ card.matQuantity1 }}</td>
+                <td style="border: 1px solid black;">{{ card.matUnitPrice1 }}</td>
+                <td style="border: 1px solid black;">{{ card.matTotal1 }}</td>
+
+                <td style="border: 1px solid black;">{{ card.labDescription1 }}</td>
+                <td style="border: 1px solid black;"> {{ card.labQuantity1 }}</td>
+                <td style="border: 1px solid black;">{{ card.labUnitPrice1 }}</td>
+                <td style="border: 1px solid black;">{{ card.labTotal1 }}</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;"><p>{{ card.matDescription2 }} </p></td>
+                <td style="border: 1px solid black;">{{ card.matQuantity2 }}</td>
+                <td style="border: 1px solid black;">{{ card.matUnitPrice2 }}</td>
+                <td style="border: 1px solid black;">{{ card.matTotal2 }}</td>
+
+                <td style="border: 1px solid black;"><p>{{ card.labDescription2 }}</p></td>
+                <td style="border: 1px solid black;"> {{ card.labQuantity2 }}</td>
+                <td style="border: 1px solid black;">{{ card.labUnitPrice2 }}</td>
+                <td style="border: 1px solid black;">{{ card.labTotal2 }}</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;"><p>{{ card.matDescription3 }}</p></td>
+                <td style="border: 1px solid black;">{{ card.matQuantity3 }}</td>
+                <td style="border: 1px solid black;">{{ card.matUnitPrice3 }}</td>
+                <td style="border: 1px solid black;">{{ card.matTotal3 }}</td>
+
+                <td style="border: 1px solid black;">{{ card.labDescription3 }}</td>
+                <td style="border: 1px solid black;"> {{ card.labQuantity3 }}</td>
+                <td style="border: 1px solid black;">{{ card.labUnitPrice3 }}</td>
+                <td style="border: 1px solid black;">{{ card.labTotal3 }}</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;"><p>{{ card.matDescription4 }}</p></td>
+                <td style="border: 1px solid black;">{{ card.matQuantity4 }}</td>
+                <td style="border: 1px solid black;">{{ card.matUnitPrice4 }}</td>
+                <td style="border: 1px solid black;">{{ card.matTotal4 }}</td>
+
+                <td style="border: 1px solid black;">{{ card.labDescription4 }}</td>
+                <td style="border: 1px solid black;"> {{ card.labQuantity4 }}</td>
+                <td style="border: 1px solid black;">{{ card.labUnitPrice4 }}</td>
+                <td style="border: 1px solid black;">{{ card.labTotal4 }}</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;"><p>{{ card.matDescription5 }}</p></td>
+                <td style="border: 1px solid black;">{{ card.matQuantity5 }}</td>
+                <td style="border: 1px solid black;">{{ card.matUnitPrice5 }}</td>
+                <td style="border: 1px solid black;">{{ card.matTotal5 }}</td>
+
+                <td style="border: 1px solid black;">{{ card.labDescription5 }}</td>
+                <td style="border: 1px solid black;"> {{ card.labQuantity5 }}</td>
+                <td style="border: 1px solid black;">{{ card.labUnitPrice5 }}</td>
+                <td style="border: 1px solid black;">{{ card.labTotal5 }}</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;"><p>{{ card.matDescription6 }}</p></td>
+                <td style="border: 1px solid black;">{{ card.matQuantity6 }}</td>
+                <td style="border: 1px solid black;">{{ card.matUnitPrice6 }}</td>
+                <td style="border: 1px solid black;">{{ card.matTotal6 }}</td>
+
+                <td style="border: 1px solid black;">{{ card.labDescription6 }}</td>
+                <td style="border: 1px solid black;"> {{ card.labQuantity6 }}</td>
+                <td style="border: 1px solid black;">{{ card.labUnitPrice6 }}</td>
+                <td style="border: 1px solid black;">{{ card.labTotal6 }}</td>
+            </tr>
+            <tr>
+                <td><p> </p></td>
+            </tr>
+            <tr>
+                <td ><p></p></td>
+                <td ></td>
+                <td style="border: 1px solid black;">Total Ex VAT</td>
+                <td style="border: 1px solid black;">{{ card.matTotalExVat }}</td>
+
+                <td ><p></p></td>
+                <td ></td>
+                <td style="border: 1px solid black;">Total Ex VAT</td>
+                <td style="border: 1px solid black;">{{ card.labTotalExVat }}</td>
+            </tr>
+            <tr>
+                <td ><p></p></td>
+                <td ></td>
+                <td style="border: 1px solid black;">VAT (15%)</td>
+                <td style="border: 1px solid black;">{{ card.matVat }}</td>
+
+                <td ><p></p></td>
+                <td ></td>
+                <td style="border: 1px solid black;">VAT (15%)</td>
+                <td style="border: 1px solid black;">{{ card.labVat }}</td>
+            </tr>
+            <tr>
+                <td ><p></p></td>
+                <td ></td>
+                <td style="border: 1px solid black;">Total Due</td>
+                <td style="border: 1px solid black;">{{ card.matTotalDue }}</td>
+
+                <td ><p></p></td>
+                <td ></td>
+                <td style="border: 1px solid black;">Total Due</td>
+                <td style="border: 1px solid black;">{{ card.labTotalDue }}</td>
+            </tr>
+        </table>
+    </div>
+    <br>
+    <hr>
+    <div class="row mb-1">
+        <h2>Total Cost Of Job</h2>
+        <h5><u>R {{ card.totalCostOfJob }}</u></h5>
+    </div>
+
+
+</div>
+{% endblock %}
