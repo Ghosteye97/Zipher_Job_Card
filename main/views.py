@@ -48,6 +48,7 @@ def jobCard(request ):
         else:
             print(form.errors)
 
+
     content = {'form':form, 'n': jobnum }
     return render(request, 'main/jobCard.html', content)
 
