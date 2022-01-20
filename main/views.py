@@ -40,7 +40,7 @@ def jobCard(request ):
                 'ZTS JOB CARD' + form.cleaned_data['jobNumber'],
                 'A new job card has been loaded for ' + form.cleaned_data['customerName'] + ' with a Total Cost of ' + form.cleaned_data['totalCostOfJob'] + 'Job Number: '+ jobnum + '(http://localhost:8000/zipherJobCards/viewJobCard/'+ str(obj.id) +')',
                 'it.zipher@gmail.com',
-                ['it@zipher.co.za'],
+                ['accounts2@gmacc.co.za'],
                 fail_silently=False,
             )
 
