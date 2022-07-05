@@ -15,7 +15,7 @@ class Migration(migrations.Migration):
             name='jobCardsClass',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('customerName', models.CharField(blank=True, max_length=60, verbose_name='Customer Name')),
+                ('customerName', models.CharField(blank=True, max_length=50, verbose_name='Customer Name')),
                 ('addressStreetNo', models.CharField(blank=True, max_length=50)),
                 ('addressStreet', models.CharField(blank=True, max_length=50)),
                 ('addressSuburb', models.CharField(blank=True, max_length=50)),
