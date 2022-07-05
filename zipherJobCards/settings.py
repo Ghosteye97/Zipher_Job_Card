@@ -125,7 +125,7 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST = 'smtp.zipher.co.za'
 EMAIL_PORT = '587'
 EMAIL_HOST_USER = 'info@zipher.co.za'
 EMAIL_HOST_PASSWORD = 'TBC'
