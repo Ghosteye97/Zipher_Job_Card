@@ -1,7 +1,7 @@
 from django.db import models
 
 class jobCardsClass(models.Model):
-    customerName = models.CharField("Customer Name",max_length=50 , blank=False)
+    customerName = models.CharField("Customer Name",max_length=60 , blank=False)
 
     addressStreetNo = models.CharField(max_length=50 , blank=False)
     addressStreet = models.CharField(max_length=50 , blank=False)
