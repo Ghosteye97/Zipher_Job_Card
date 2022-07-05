@@ -13,6 +13,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='jobcardsclass',
             name='customerName',
-            field=models.CharField(choices=[('Kyle Alan Stranger', 'Kyle Alan Stranger')], default=1, max_length=100),
+            field=models.CharField(choices=[('Juan Jansen van Rensburg', 'Juan Jansen van Rensburg')], default=1, max_length=100),
         ),
     ]
